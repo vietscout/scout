@@ -1,0 +1,10 @@
+{
+  "id": "serein",
+  "name": "Serein Warm Minimal",
+  "description": "Warm, low-distraction palette from Serein Theme (cmduyeen/serein-theme).",
+  "author": "cmduyeen",
+  "defaults": {
+    "STATS_THEME": "gruvbox",
+    "GRAPH_THEME": "gruvbox"
+  }
+}

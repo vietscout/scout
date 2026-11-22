@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="140" viewBox="0 0 320 140" fill="none">
+  <rect width="320" height="140" rx="10" fill="#18181B" stroke="#27272A" stroke-width="2"/>
+  <text x="58" y="68" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="20" font-weight="700">420</text>
+  <text x="58" y="90" text-anchor="middle" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="10">Total Contributions</text>
+  <circle cx="160" cy="64" r="26" stroke="#F97316" stroke-width="5"/>
+  <text x="160" y="69" text-anchor="middle" fill="#F97316" font-family="system-ui, sans-serif" font-size="15" font-weight="700">14d</text>
+  <text x="160" y="108" text-anchor="middle" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="10">Current Streak</text>
+  <text x="262" y="68" text-anchor="middle" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="20" font-weight="700">30d</text>
+  <text x="262" y="90" text-anchor="middle" fill="#A1A1AA" font-family="system-ui, sans-serif" font-size="10">Longest Streak</text>
+</svg>

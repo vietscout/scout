@@ -1,0 +1,10 @@
+{
+  "id": "pinkie",
+  "name": "Pinkie Pastel",
+  "description": "Soft pastel-pink aesthetic from Pinkie Theme (cmduyeen/pinkie-theme).",
+  "author": "cmduyeen",
+  "defaults": {
+    "STATS_THEME": "rose_pine",
+    "GRAPH_THEME": "rogue"
+  }
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180" fill="none">
+  <rect width="320" height="180" rx="12" fill="#FFF1F2" stroke="#FBCFE8" stroke-width="2"/>
+  <text x="160" y="38" text-anchor="middle" fill="#DB2777" font-family="system-ui, sans-serif" font-size="16" font-weight="700">🌸 octocat</text>
+  <rect x="85" y="48" width="150" height="8" rx="4" fill="#F472B6"/>
+  <rect x="70" y="66" width="84" height="18" rx="4" fill="#FCE7F3"/>
+  <rect x="166" y="66" width="84" height="18" rx="4" fill="#FCE7F3"/>
+  <rect x="24" y="102" width="272" height="54" rx="8" fill="#FFFFFF" stroke="#FBCFE8"/>
+  <circle cx="38" cy="120" r="4" fill="#EC4899"/>
+  <rect x="50" y="116" width="170" height="7" rx="3.5" fill="#831843"/>
+  <circle cx="38" cy="138" r="4" fill="#F472B6"/>
+  <rect x="50" y="134" width="140" height="7" rx="3.5" fill="#BE185D" fill-opacity="0.5"/>
+</svg>

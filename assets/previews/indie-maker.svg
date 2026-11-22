@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180" fill="none">
+  <rect width="320" height="180" rx="12" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="22" y="36" fill="#F8FAFC" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="700">Hey, I'm octocat 👋</text>
+  <rect x="22" y="46" width="210" height="7" rx="3.5" fill="#94A3B8"/>
+  <rect x="22" y="64" width="276" height="52" rx="8" fill="#1E293B"/>
+  <rect x="32" y="74" width="70" height="7" rx="3.5" fill="#38BDF8"/>
+  <rect x="114" y="74" width="110" height="7" rx="3.5" fill="#CBD5E1"/>
+  <rect x="236" y="74" width="42" height="7" rx="3.5" fill="#34D399"/>
+  <rect x="32" y="92" width="70" height="7" rx="3.5" fill="#38BDF8"/>
+  <rect x="114" y="92" width="95" height="7" rx="3.5" fill="#94A3B8"/>
+  <rect x="236" y="92" width="42" height="7" rx="3.5" fill="#34D399"/>
+  <text x="22" y="138" fill="#E2E8F0" font-family="system-ui, -apple-system, sans-serif" font-size="10" font-weight="600">Latest Blog &amp; YouTube RSS</text>
+  <rect x="22" y="148" width="180" height="6" rx="3" fill="#64748B"/>
+  <rect x="22" y="160" width="150" height="6" rx="3" fill="#475569"/>
+</svg>

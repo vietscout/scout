@@ -1,0 +1,151 @@
+name: Build My Profile
+
+on:
+  workflow_dispatch:
+    inputs:
+      theme:
+        description: "Choose a profile theme"
+        type: choice
+        required: true
+        default: "indie-maker"
+        options:
+          - minimalist
+          - indie-maker
+          - developer-portfolio
+          - terminal-hacker
+          - research-student
+          - dracula
+          - catppuccin
+          - serein
+          - pinkie
+      include_typing_svg:
+        description: "Add animated typing header (typing-svg)"
+        type: boolean
+        default: true
+      include_skill_icons:
+        description: "Add tech stack icons grid (skill-icons)"
+        type: boolean
+        default: true
+      include_github_stats:
+        description: "Add GitHub stats & streak cards (github-stats)"
+        type: boolean
+        default: true
+      include_social_badges:
+        description: "Add social & contact badges (social-badges)"
+        type: boolean
+        default: true
+      include_activity_graph:
+        description: "Add 31-day activity graph (activity-graph)"
+        type: boolean
+        default: false
+      blog_rss_url:
+        description: "Optional: Your Blog RSS URL (enables blog-rss)"
+        type: string
+        required: false
+        default: ""
+      youtube_channel_id:
+        description: "Optional: Your YouTube Channel ID UC... (enables youtube-rss)"
+        type: string
+        required: false
+        default: ""
+      spotify_uid:
+        description: "Optional: Your Spotify UID (enables spotify-now-playing)"
+        type: string
+        required: false
+        default: ""
+      include_wakatime:
+        description: "Add WakaTime weekly stats (requires WAKATIME_API_KEY secret)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  build-profile:
+    if: github.repository != 'cmduyeen/pro-github-starter-kit'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Assemble Profile README and Workflows
+        env:
+          INPUT_THEME: ${{ inputs.theme }}
+          INPUT_TYPING: ${{ inputs.include_typing_svg }}
+          INPUT_SKILLS: ${{ inputs.include_skill_icons }}
+          INPUT_STATS: ${{ inputs.include_github_stats }}
+          INPUT_SOCIAL: ${{ inputs.include_social_badges }}
+          INPUT_GRAPH: ${{ inputs.include_activity_graph }}
+          INPUT_BLOG_RSS: ${{ inputs.blog_rss_url }}
+          INPUT_YOUTUBE_ID: ${{ inputs.youtube_channel_id }}
+          INPUT_SPOTIFY_UID: ${{ inputs.spotify_uid }}
+          INPUT_WAKATIME: ${{ inputs.include_wakatime }}
+        run: |
+          python - << 'EOF'
+          import os
+          import subprocess
+          import sys
+
+          plugins = []
+          if os.environ.get("INPUT_TYPING") == "true":
+              plugins.append("typing-svg")
+          if os.environ.get("INPUT_SKILLS") == "true":
+              plugins.append("skill-icons")
+          if os.environ.get("INPUT_STATS") == "true":
+              plugins.append("github-stats")
+          if os.environ.get("INPUT_GRAPH") == "true":
+              plugins.append("activity-graph")
+          if os.environ.get("INPUT_SOCIAL") == "true":
+              plugins.append("social-badges")
+
+          cmd = [
+              sys.executable,
+              "setup.py",
+              "--username",
+              os.environ["GITHUB_REPOSITORY_OWNER"],
+              "--theme",
+              os.environ["INPUT_THEME"],
+          ]
+
+          blog_rss = os.environ.get("INPUT_BLOG_RSS", "").strip()
+          if blog_rss:
+              plugins.append("blog-rss")
+              cmd.extend(["--var", f"BLOG_RSS_URL={blog_rss}"])
+
+          yt_id = os.environ.get("INPUT_YOUTUBE_ID", "").strip()
+          if yt_id:
+              plugins.append("youtube-rss")
+              cmd.extend(["--var", f"YOUTUBE_CHANNEL_ID={yt_id}"])
+
+          spotify_uid = os.environ.get("INPUT_SPOTIFY_UID", "").strip()
+          if spotify_uid:
+              plugins.append("spotify-now-playing")
+              cmd.extend(["--var", f"SPOTIFY_UID={spotify_uid}"])
+
+          if os.environ.get("INPUT_WAKATIME") == "true":
+              plugins.append("wakatime-stats")
+
+          if plugins:
+              cmd.extend(["--plugins", ",".join(plugins)])
+
+          subprocess.run(cmd, check=True)
+          EOF
+
+      - name: Commit generated profile
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No README changes to commit."
+          else
+            git commit -m "chore: build GitHub profile README via Build My Profile"
+            git push
+          fi
+          echo "Note: If you enabled blog-rss, youtube-rss, or wakatime-stats, copy its workflow.yml into .github/workflows/ or run 'python setup.py' locally (GITHUB_TOKEN cannot push workflow files)."

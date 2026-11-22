@@ -1,0 +1,9 @@
+{
+  "id": "social-badges",
+  "name": "Social & Contact Badges",
+  "description": "Adds crisp shields.io social and portfolio badges.",
+  "author": "cmduyeen",
+  "defaults": {
+    "X_HANDLE": "{{USERNAME}}"
+  }
+}

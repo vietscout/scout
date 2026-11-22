@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="140" viewBox="0 0 320 140" fill="none">
+  <rect width="320" height="140" rx="10" fill="#111827" stroke="#1F2937" stroke-width="2"/>
+  <rect x="26" y="48" width="42" height="42" rx="10" fill="#3B82F6"/>
+  <rect x="82" y="48" width="42" height="42" rx="10" fill="#F59E0B"/>
+  <rect x="138" y="48" width="42" height="42" rx="10" fill="#10B981"/>
+  <rect x="194" y="48" width="42" height="42" rx="10" fill="#EC4899"/>
+  <rect x="250" y="48" width="42" height="42" rx="10" fill="#8B5CF6"/>
+  <text x="47" y="74" text-anchor="middle" fill="#FFF" font-family="ui-monospace, monospace" font-size="13" font-weight="700">PY</text>
+  <text x="103" y="74" text-anchor="middle" fill="#FFF" font-family="ui-monospace, monospace" font-size="13" font-weight="700">JS</text>
+  <text x="159" y="74" text-anchor="middle" fill="#FFF" font-family="ui-monospace, monospace" font-size="13" font-weight="700">TS</text>
+  <text x="215" y="74" text-anchor="middle" fill="#FFF" font-family="ui-monospace, monospace" font-size="13" font-weight="700">OB</text>
+  <text x="271" y="74" text-anchor="middle" fill="#FFF" font-family="ui-monospace, monospace" font-size="13" font-weight="700">GH</text>
+</svg>

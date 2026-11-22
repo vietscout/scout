@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro GitHub Starter Kit — Visual GitHub Profile README Builder</title>
+  <meta name="description" content="Free visual GitHub Profile README builder with 9 modular themes, 12 plugins (Blog RSS, YouTube, Spotify, WakaTime, Snake), live split preview, and SEO checklist." />
+  <meta name="keywords" content="github profile readme, github profile builder, github readme generator, github achievements, github badges, github seo, starter kit" />
+  <meta name="author" content="cmduyeen" />
+  <link rel="canonical" href="https://cmduyeen.github.io/pro-github-starter-kit/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pro GitHub Starter Kit — Visual GitHub Profile README Builder" />
+  <meta property="og:description" content="Build a standout GitHub Profile README in seconds. 9 themes, 12 plugins, live split-screen preview, and instant Markdown export." />
+  <meta property="og:url" content="https://cmduyeen.github.io/pro-github-starter-kit/" />
+  <meta property="og:image" content="https://cmduyeen.github.io/pro-github-starter-kit/social-preview.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pro GitHub Starter Kit — Visual GitHub Profile README Builder" />
+  <meta name="twitter:description" content="Build a standout GitHub Profile README in seconds with 9 themes, 12 plugins, and live split preview." />
+  <meta name="twitter:image" content="https://cmduyeen.github.io/pro-github-starter-kit/social-preview.png" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Pro GitHub Starter Kit — Visual Profile Builder",
+      "url": "https://cmduyeen.github.io/pro-github-starter-kit/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "cmduyeen",
+        "url": "https://github.com/cmduyeen"
+      },
+      "description": "Free visual GitHub Profile README builder with 9 modular themes, 12 plugins, and side-by-side live preview."
+    }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7eed6;
+      --panel: #fff8e7;
+      --border: #d6ba8a;
+      --text: #3e2723;
+      --muted: #795548;
+      --accent: #4f8f3c;
+      --accent-hover: #3f782e;
+      --green: #b45309;
+      --code-bg: #efe0bc;
+      --btn-text: #fff8e7;
+      --grid-dot: rgba(143, 86, 59, 0.14);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --bg: #1f1916;
+        --panel: #2a221d;
+        --border: #5c4332;
+        --text: #f5ebd6;
+        --muted: #a69076;
+        --accent: #7ec850;
+        --accent-hover: #96d96c;
+        --green: #eab308;
+        --code-bg: #362c25;
+        --btn-text: #1f1916;
+        --grid-dot: rgba(156, 113, 81, 0.14);
+      }
+    }
+    * { box-sizing: border-box; }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px);
+      background-size: 24px 24px;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    header h1 {
+      margin: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+    header p { margin: 2px 0 0; font-size: 0.85rem; color: var(--muted); }
+    .header-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-sm { padding: 4px 10px; font-size: 0.78rem; }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--btn-text); }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--btn-text); }
+    .btn-success { background: var(--green); border-color: var(--green); color: var(--btn-text); }
+    .steps-bar {
+      max-width: 1560px;
+      margin: 16px auto 0;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px) {
+      .steps-bar { grid-template-columns: 1fr; }
+    }
+    .step-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      font-size: 0.83rem;
+      color: var(--text);
+    }
+    .step-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.76rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      background: var(--bg);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .step-chip code {
+      background: var(--border);
+      padding: 1px 6px;
+      border-radius: 5px;
+      font-size: 0.8em;
+      color: var(--text);
+    }
+    main {
+      max-width: 1560px;
+      margin: 16px auto 28px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 340px minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: stretch;
+    }
+    @media (max-width: 1120px) {
+      main { grid-template-columns: 1fr; }
+    }
+    .card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    .card-header h2 { margin: 0; font-size: 0.98rem; }
+    label.field-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin: 12px 0 6px;
+      color: var(--text);
+    }
+    input[type="text"], select {
+      width: 100%;
+      padding: 8px 11px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--code-bg);
+      color: var(--text);
+      font-size: 0.88rem;
+    }
+    input[type="text"]:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--accent);
+      border-color: var(--accent);
+    }
+    .preset-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0;
+    }
+    .plugins-list {
+      display: grid;
+      gap: 8px;
+      max-height: 360px;
+      overflow-y: auto;
+      padding-right: 4px;
+      margin-top: 8px;
+    }
+    .plugin-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 11px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .plugin-item.active {
+      border-color: var(--accent);
+      background: rgba(145, 72, 84, 0.08);
+    }
+    .plugin-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .plugin-head input { accent-color: var(--accent); width: 16px; height: 16px; }
+    .plugin-badge {
+      margin-left: auto;
+      font-size: 0.7rem;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: rgba(145, 72, 84, 0.14);
+      color: var(--accent);
+    }
+    .plugin-desc { font-size: 0.78rem; color: var(--muted); margin: 4px 0 0 24px; }
+    .plugin-vars { margin: 8px 0 0 24px; display: none; }
+    .plugin-item.active .plugin-vars { display: block; }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      align-items: center;
+    }
+    textarea {
+      width: 100%;
+      min-height: 540px;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--code-bg);
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      resize: vertical;
+    }
+    .editor-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .cli-box {
+      margin-top: 10px;
+      padding: 9px 11px;
+      border-radius: 8px;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      font-family: ui-monospace, monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      word-break: break-all;
+    }
+    .status { font-size: 0.82rem; color: var(--green); margin-left: auto; }
+    .preview-pane {
+      min-height: 540px;
+      max-height: 680px;
+      overflow-y: auto;
+      padding: 20px 24px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0d1117;
+      color: #e6edf3;
+      font-size: 0.94rem;
+      line-height: 1.6;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .preview-pane.light {
+      background: #ffffff;
+      color: #1f2328;
+      border-color: #d0d7de;
+    }
+    .preview-pane h1, .preview-pane h2, .preview-pane h3 {
+      border-bottom: 1px solid #21262d;
+      padding-bottom: 0.3em;
+      margin-top: 1.1em;
+    }
+    .preview-pane.light h1, .preview-pane.light h2, .preview-pane.light h3 {
+      border-bottom-color: #d8dee4;
+    }
+    .preview-pane h1:first-child { margin-top: 0; }
+    .preview-pane a { color: #58a6ff; text-decoration: none; }
+    .preview-pane.light a { color: #0969da; }
+    .preview-pane a:hover { text-decoration: underline; }
+    .preview-pane img { max-width: 100%; height: auto; }
+    .preview-pane table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    .preview-pane th, .preview-pane td { border: 1px solid #30363d; padding: 6px 12px; }
+    .preview-pane th { background: #161b22; }
+    .preview-pane.light th, .preview-pane.light td { border-color: #d0d7de; }
+    .preview-pane.light th { background: #f6f8fa; }
+    .preview-pane pre, .preview-pane code {
+      background: #161b22;
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85em;
+    }
+    .preview-pane.light pre, .preview-pane.light code { background: #f6f8fa; }
+    .preview-pane pre { padding: 12px; overflow-x: auto; }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>🚀 Pro GitHub Starter Kit — Visual Profile Builder</h1>
+      <p>Customize your theme &amp; plugins, edit Markdown side-by-side, and export to GitHub in seconds.</p>
+    </div>
+    <div class="header-links">
+      <a class="btn" href="https://github.com/cmduyeen/pro-github-starter-kit" target="_blank" rel="noopener">Docs &amp; Badges</a>
+      <a class="btn" href="https://github.com/new" target="_blank" rel="noopener">+ New GitHub Repo</a>
+      <a class="btn btn-primary" href="https://github.com/cmduyeen/pro-github-starter-kit/generate" target="_blank" rel="noopener">Use This Template</a>
+    </div>
+  </header>
+
+  <div class="steps-bar">
+    <div class="step-chip">
+      <span class="step-num">1</span>
+      <span>Create public repo <code>&lt;user&gt;/&lt;user&gt;</code></span>
+    </div>
+    <div class="step-chip">
+      <span class="step-num">2</span>
+      <span>Pick a theme, plugins &amp; edit below</span>
+    </div>
+    <div class="step-chip">
+      <span class="step-num">3</span>
+      <span>Paste into <code>README.md</code> &amp; commit <span id="draftNotice" style="color:var(--accent);margin-left:6px;"></span></span>
+    </div>
+  </div>
+
+  <main>
+    <section class="card">
+      <div class="card-header">
+        <h2>1. Configure</h2>
+        <button id="resetBtn" class="btn btn-sm" type="button" title="Rebuild from selected theme & plugins">Reset Draft</button>
+      </div>
+
+      <label class="field-label" for="username">GitHub Username</label>
+      <input id="username" type="text" value="cmduyeen" placeholder="your-github-username" />
+
+      <label class="field-label" for="themeSelect">Choose a Theme</label>
+      <select id="themeSelect"></select>
+      <p id="themeDesc" class="plugin-desc" style="margin-left: 0;"></p>
+
+      <label class="field-label" for="pluginSearch">Plugins (<span id="pluginCount">0</span> selected)</label>
+      <input id="pluginSearch" type="text" placeholder="Search plugins (e.g. blog, spotify, stats)..." />
+      <div class="preset-row">
+        <button id="presetProBtn" class="btn btn-sm" type="button">Pro Combo</button>
+        <button id="presetMinimalBtn" class="btn btn-sm" type="button">Minimal</button>
+        <button id="clearPluginsBtn" class="btn btn-sm" type="button">Clear All</button>
+      </div>
+      <div id="pluginsList" class="plugins-list">Loading catalog...</div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>2. Edit Markdown</h2>
+        <span id="statusMsg" class="status"></span>
+      </div>
+      <div class="toolbar">
+        <button id="copyBtn" class="btn btn-primary" type="button">Copy Markdown</button>
+        <button id="downloadBtn" class="btn btn-success" type="button">Download README.md</button>
+        <button id="copyCliBtn" class="btn" type="button">Copy CLI</button>
+      </div>
+      <textarea id="output" spellcheck="false"></textarea>
+      <div class="editor-meta">
+        <span id="statsMeta">0 lines · 0 chars</span>
+        <span>Edits auto-saved locally</span>
+      </div>
+      <div id="cliBox" class="cli-box"></div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>3. Live Preview</h2>
+        <button id="toggleModeBtn" class="btn btn-sm" type="button">☀️ Light Mode</button>
+      </div>
+      <div style="border: 1px solid var(--border); border-radius: 10px; overflow: hidden;">
+        <div style="display:flex; align-items:center; gap:6px; padding:8px 12px; background:#161b22; border-bottom:1px solid var(--border); font-size:0.78rem; color:#9ca3af;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#ef4444;display:inline-block;"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#10b981;display:inline-block;"></span>
+          <span style="margin-left:8px;font-family:ui-monospace,monospace;">README.md</span>
+        </div>
+        <div id="previewPane" class="preview-pane" style="border:none; border-radius:0;">Loading preview...</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const STORAGE_KEY = "pro-github-starter-kit-draft-v1";
+    let catalog = { themes: [], plugins: [] };
+    let selectedPlugins = new Set(["skill-icons", "github-stats", "social-badges"]);
+    let customVars = {};
+    let hasManualEdits = false;
+    let searchQuery = "";
+
+    const usernameEl = document.getElementById("username");
+    const themeSelectEl = document.getElementById("themeSelect");
+    const themeDescEl = document.getElementById("themeDesc");
+    const pluginSearchEl = document.getElementById("pluginSearch");
+    const pluginCountEl = document.getElementById("pluginCount");
+    const pluginsListEl = document.getElementById("pluginsList");
+    const outputEl = document.getElementById("output");
+    const previewPaneEl = document.getElementById("previewPane");
+    const cliBoxEl = document.getElementById("cliBox");
+    const statusMsgEl = document.getElementById("statusMsg");
+    const statsMetaEl = document.getElementById("statsMeta");
+    const draftNoticeEl = document.getElementById("draftNotice");
+    const toggleModeBtn = document.getElementById("toggleModeBtn");
+
+    function replacePlaceholders(text, vars) {
+      let result = text;
+      for (let pass = 0; pass < 2; pass++) {
+        for (const [k, v] of Object.entries(vars)) {
+          const val = k === "TYPING_LINES" ? String(v).trim().replace(/\s+/g, "+") : String(v);
+          result = result.split(`{{${k}}}`).join(val);
+        }
+      }
+      return result;
+    }
+
+    function updateMeta(text) {
+      const lines = text ? text.split("\n").length : 0;
+      statsMetaEl.textContent = `${lines} lines · ${text.length} chars`;
+    }
+
+    function updatePreviewPane(markdown) {
+      if (
+        window.marked &&
+        typeof window.marked.parse === "function" &&
+        window.DOMPurify &&
+        typeof window.DOMPurify.sanitize === "function"
+      ) {
+        const rawHtml = window.marked.parse(markdown, { breaks: true, gfm: true });
+        previewPaneEl.innerHTML = window.DOMPurify.sanitize(rawHtml, {
+          ADD_TAGS: ["picture", "source"],
+          ADD_ATTR: ["media", "srcset", "align", "valign", "width", "alt"],
+        });
+        for (const img of previewPaneEl.querySelectorAll("img")) {
+          if (img.src.includes("github-contribution-grid-snake")) {
+            img.addEventListener("error", () => {
+              img.src = "./../assets/previews/plugins/snake-contribution.svg";
+            }, { once: true });
+          }
+        }
+      } else {
+        previewPaneEl.textContent = markdown;
+      }
+      updateMeta(markdown);
+    }
+
+    function saveDraft() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          username: usernameEl.value,
+          theme: themeSelectEl.value,
+          plugins: Array.from(selectedPlugins),
+          customVars,
+          hasManualEdits,
+          markdown: hasManualEdits ? outputEl.value : "",
+        }));
+      } catch (_) {}
+    }
+
+    function buildFromConfig(forceOverwrite = false) {
+      const username = (usernameEl.value || "your-username").trim();
+      const theme = catalog.themes.find(t => t.id === themeSelectEl.value) || catalog.themes[0];
+      if (!theme) return;
+
+      themeDescEl.textContent = `${theme.description} (by @${theme.author})`;
+      pluginCountEl.textContent = String(selectedPlugins.size);
+
+      const merged = { USERNAME: username, ...(theme.defaults || {}) };
+      const chosen = catalog.plugins.filter(p => selectedPlugins.has(p.id));
+      for (const p of chosen) {
+        for (const [k, v] of Object.entries(p.defaults || {})) {
+          if (!(k in merged)) merged[k] = String(v);
+        }
+      }
+      for (const [k, v] of Object.entries(customVars)) {
+        if (v.trim()) merged[k] = v.trim();
+      }
+
+      if (!hasManualEdits || forceOverwrite) {
+        const pluginBlocks = chosen.map(p => replacePlaceholders(p.snippet, merged));
+        let rendered = theme.template.replace("{{PLUGINS}}", pluginBlocks.join("\n\n"));
+        rendered = replacePlaceholders(rendered, merged).replace(/\n{3,}/g, "\n\n").trim() + "\n";
+        outputEl.value = rendered;
+        updatePreviewPane(rendered);
+        hasManualEdits = false;
+        draftNoticeEl.textContent = "";
+      }
+
+      const pluginArg = chosen.map(p => p.id).join(",");
+      let cli = `python setup.py --username ${username} --theme ${theme.id}`;
+      if (pluginArg) cli += ` --plugins ${pluginArg}`;
+      for (const [k, v] of Object.entries(customVars)) {
+        if (v.trim()) cli += ` --var ${k}=${v.trim()}`;
+      }
+      cliBoxEl.textContent = cli;
+      saveDraft();
+    }
+
+    function renderPluginsUI() {
+      pluginsListEl.innerHTML = "";
+      const q = searchQuery.trim().toLowerCase();
+      const filtered = catalog.plugins.filter(p =>
+        !q || p.id.toLowerCase().includes(q) || p.description.toLowerCase().includes(q)
+      );
+
+      if (filtered.length === 0) {
+        pluginsListEl.innerHTML = '<div class="plugin-desc" style="margin-left:0;">No matching plugins found.</div>';
+        return;
+      }
+
+      for (const p of filtered) {
+        const wrapper = document.createElement("div");
+        const isChecked = selectedPlugins.has(p.id);
+        wrapper.className = "plugin-item" + (isChecked ? " active" : "");
+
+        const head = document.createElement("label");
+        head.className = "plugin-head";
+        const cb = document.createElement("input");
+        cb.type = "checkbox";
+        cb.checked = isChecked;
+        cb.addEventListener("change", () => {
+          if (cb.checked) selectedPlugins.add(p.id);
+          else selectedPlugins.delete(p.id);
+          wrapper.classList.toggle("active", cb.checked);
+          hasManualEdits = false;
+          buildFromConfig(true);
+        });
+        const title = document.createElement("strong");
+        title.textContent = p.id;
+        head.append(cb, title);
+
+        if (p.has_workflow) {
+          const badge = document.createElement("span");
+          badge.className = "plugin-badge";
+          badge.textContent = "Auto";
+          head.append(badge);
+
+          const dlBtn = document.createElement("button");
+          dlBtn.type = "button";
+          dlBtn.className = "btn btn-sm";
+          dlBtn.style.marginLeft = "4px";
+          dlBtn.textContent = "⬇ .yml";
+          dlBtn.title = `Download ${p.workflow_file || p.id + ".yml"} for .github/workflows/`;
+          dlBtn.addEventListener("click", (ev) => {
+            ev.preventDefault();
+            ev.stopPropagation();
+            const username = (usernameEl.value || "your-username").trim();
+            const vars = { USERNAME: username, ...(p.defaults || {}), ...customVars };
+            const wfText = replacePlaceholders(p.workflow_content || "", vars);
+            const blob = new Blob([wfText], { type: "text/yaml;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = p.workflow_file || `${p.id}.yml`;
+            a.click();
+            URL.revokeObjectURL(url);
+            flashStatus(`Downloaded ${a.download}! Put it in .github/workflows/`);
+          });
+          head.append(dlBtn);
+        }
+
+        const desc = document.createElement("div");
+        desc.className = "plugin-desc";
+        desc.textContent = p.description;
+        wrapper.append(head, desc);
+
+        const defaultEntries = Object.entries(p.defaults || {});
+        if (defaultEntries.length > 0) {
+          const varsDiv = document.createElement("div");
+          varsDiv.className = "plugin-vars";
+          for (const [k, v] of defaultEntries) {
+            const lbl = document.createElement("label");
+            lbl.className = "field-label";
+            lbl.style.marginTop = "6px";
+            lbl.textContent = k;
+            const inp = document.createElement("input");
+            inp.type = "text";
+            inp.placeholder = String(v);
+            inp.value = customVars[k] || "";
+            inp.addEventListener("input", () => {
+              customVars[k] = inp.value;
+              hasManualEdits = false;
+              buildFromConfig(true);
+            });
+            varsDiv.append(lbl, inp);
+          }
+          wrapper.append(varsDiv);
+        }
+
+        pluginsListEl.append(wrapper);
+      }
+    }
+
+    function flashStatus(msg) {
+      statusMsgEl.textContent = msg;
+      setTimeout(() => { statusMsgEl.textContent = ""; }, 2200);
+    }
+
+    outputEl.addEventListener("input", () => {
+      hasManualEdits = true;
+      draftNoticeEl.textContent = "Custom text mode (click 'Reset Draft' to re-sync from template)";
+      updatePreviewPane(outputEl.value);
+      saveDraft();
+    });
+
+    usernameEl.addEventListener("input", () => { hasManualEdits = false; buildFromConfig(true); });
+    themeSelectEl.addEventListener("change", () => { hasManualEdits = false; buildFromConfig(true); });
+    pluginSearchEl.addEventListener("input", () => { searchQuery = pluginSearchEl.value; renderPluginsUI(); });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      hasManualEdits = false;
+      buildFromConfig(true);
+      flashStatus("Synced from template!");
+    });
+    document.getElementById("presetProBtn").addEventListener("click", () => {
+      selectedPlugins = new Set(["typing-svg", "skill-icons", "github-stats", "activity-graph", "social-badges"]);
+      hasManualEdits = false;
+      renderPluginsUI();
+      buildFromConfig(true);
+    });
+    document.getElementById("presetMinimalBtn").addEventListener("click", () => {
+      selectedPlugins = new Set(["social-badges"]);
+      hasManualEdits = false;
+      renderPluginsUI();
+      buildFromConfig(true);
+    });
+    document.getElementById("clearPluginsBtn").addEventListener("click", () => {
+      selectedPlugins = new Set();
+      hasManualEdits = false;
+      renderPluginsUI();
+      buildFromConfig(true);
+    });
+
+    toggleModeBtn.addEventListener("click", () => {
+      const isLight = previewPaneEl.classList.toggle("light");
+      toggleModeBtn.textContent = isLight ? "🌙 Dark Mode" : "☀️ Light Mode";
+    });
+
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      await navigator.clipboard.writeText(outputEl.value);
+      flashStatus("Copied Markdown!");
+    });
+    document.getElementById("copyCliBtn").addEventListener("click", async () => {
+      await navigator.clipboard.writeText(cliBoxEl.textContent);
+      flashStatus("Copied CLI command!");
+    });
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const blob = new Blob([outputEl.value], { type: "text/markdown;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "README.md";
+      a.click();
+      URL.revokeObjectURL(url);
+      flashStatus("Downloaded README.md!");
+    });
+
+    fetch("./catalog.json")
+      .then(res => res.json())
+      .then(data => {
+        catalog = data;
+        let saved = null;
+        try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null"); } catch (_) {}
+
+        if (saved) {
+          if (saved.username) usernameEl.value = saved.username;
+          if (Array.isArray(saved.plugins)) selectedPlugins = new Set(saved.plugins);
+          if (saved.customVars) customVars = saved.customVars;
+        }
+
+        const initialTheme = (saved && saved.theme) || "indie-maker";
+        for (const t of catalog.themes) {
+          const opt = document.createElement("option");
+          opt.value = t.id;
+          opt.textContent = `${t.id} — ${t.name}`;
+          if (t.id === initialTheme) opt.selected = true;
+          themeSelectEl.append(opt);
+        }
+
+        renderPluginsUI();
+        if (saved && saved.hasManualEdits && saved.markdown) {
+          hasManualEdits = true;
+          outputEl.value = saved.markdown;
+          updatePreviewPane(saved.markdown);
+          draftNoticeEl.textContent = "Restored custom draft (click 'Reset Draft' to re-sync)";
+          buildFromConfig(false);
+        } else {
+          buildFromConfig(true);
+        }
+      })
+      .catch(() => {
+        pluginsListEl.textContent = "Failed to load catalog.json.";
+      });
+  </script>
+</body>
+</html>

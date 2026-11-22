@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="140" viewBox="0 0 320 140" fill="none">
+  <rect width="320" height="140" rx="10" fill="#1E1E2E" stroke="#313244" stroke-width="2"/>
+  <text x="24" y="34" fill="#CDD6F4" font-family="ui-monospace, monospace" font-size="11" font-weight="700">Weekly Coding Activity</text>
+  <text x="24" y="62" fill="#A6ADC8" font-family="ui-monospace, monospace" font-size="10">Python</text>
+  <rect x="96" y="53" width="170" height="10" rx="5" fill="#313244"/>
+  <rect x="96" y="53" width="130" height="10" rx="5" fill="#89B4FA"/>
+  <text x="24" y="88" fill="#A6ADC8" font-family="ui-monospace, monospace" font-size="10">TypeScript</text>
+  <rect x="96" y="79" width="170" height="10" rx="5" fill="#313244"/>
+  <rect x="96" y="79" width="75" height="10" rx="5" fill="#A6E3A1"/>
+  <text x="24" y="114" fill="#A6ADC8" font-family="ui-monospace, monospace" font-size="10">Markdown</text>
+  <rect x="96" y="105" width="170" height="10" rx="5" fill="#313244"/>
+  <rect x="96" y="105" width="45" height="10" rx="5" fill="#F9E2AF"/>
+</svg>

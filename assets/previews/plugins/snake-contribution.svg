@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="140" viewBox="0 0 320 140" fill="none">
+  <rect width="320" height="140" rx="10" fill="#0D1117" stroke="#30363D" stroke-width="2"/>
+  <rect x="30" y="40" width="16" height="16" rx="3" fill="#161B22"/>
+  <rect x="52" y="40" width="16" height="16" rx="3" fill="#0E4429"/>
+  <rect x="74" y="40" width="16" height="16" rx="3" fill="#006D32"/>
+  <rect x="96" y="40" width="16" height="16" rx="3" fill="#26A641"/>
+  <rect x="118" y="40" width="16" height="16" rx="3" fill="#39D353"/>
+  <rect x="140" y="40" width="16" height="16" rx="3" fill="#8B5CF6"/>
+  <rect x="162" y="40" width="16" height="16" rx="3" fill="#A78BFA"/>
+  <rect x="162" y="62" width="16" height="16" rx="3" fill="#A78BFA"/>
+  <rect x="184" y="62" width="16" height="16" rx="3" fill="#C4B5FD"/>
+  <rect x="206" y="62" width="16" height="16" rx="3" fill="#39D353"/>
+  <rect x="250" y="62" width="16" height="16" rx="3" fill="#26A641"/>
+  <text x="30" y="108" fill="#8B949E" font-family="ui-monospace, monospace" font-size="11">Contribution Snake Animation</text>
+</svg>

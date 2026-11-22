@@ -1,0 +1,24 @@
+name: Sync Latest Blog Posts
+
+on:
+  schedule:
+    # Runs once a day at 02:00 UTC to keep commit history clean
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme-with-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch latest blog posts
+        uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: "{{BLOG_RSS_URL}}"
+          max_post_count: 5
+          commit_message: "chore: update latest blog posts"

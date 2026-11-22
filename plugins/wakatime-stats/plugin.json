@@ -1,0 +1,7 @@
+{
+  "id": "wakatime-stats",
+  "name": "WakaTime Coding Stats",
+  "description": "Automatically updates your weekly coding time and language breakdown via WakaTime.",
+  "author": "cmduyeen",
+  "workflow_file": "wakatime-sync.yml"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "blog-rss",
+  "name": "Blog RSS Sync",
+  "description": "Automatically syncs your latest blog posts via RSS using GitHub Actions.",
+  "author": "cmduyeen",
+  "workflow_file": "blog-rss-sync.yml",
+  "defaults": {
+    "BLOG_RSS_URL": "https://{{USERNAME}}.github.io/index.xml"
+  }
+}

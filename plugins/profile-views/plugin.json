@@ -1,0 +1,10 @@
+{
+  "id": "profile-views",
+  "name": "Profile Views Counter",
+  "category": "Badge",
+  "description": "Adds a live profile visitor counter badge via komarev.com.",
+  "author": "cmduyeen",
+  "defaults": {
+    "VIEWS_COLOR": "3b82f6"
+  }
+}

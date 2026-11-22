@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180" fill="none">
+  <rect width="320" height="180" rx="12" fill="#090D16" stroke="#1E293B" stroke-width="2"/>
+  <circle cx="24" cy="22" r="5" fill="#EF4444"/>
+  <circle cx="40" cy="22" r="5" fill="#F59E0B"/>
+  <circle cx="56" cy="22" r="5" fill="#10B981"/>
+  <text x="22" y="50" fill="#22C55E" font-family="ui-monospace, monospace" font-size="13" font-weight="700">$ whoami -&gt; octocat</text>
+  <rect x="22" y="60" width="276" height="54" rx="6" fill="#111827" stroke="#1F2937"/>
+  <text x="32" y="78" fill="#38BDF8" font-family="ui-monospace, monospace" font-size="10">OS:    Open Source / Linux</text>
+  <text x="32" y="94" fill="#A78BFA" font-family="ui-monospace, monospace" font-size="10">Role:  Systems &amp; CLI Builder</text>
+  <text x="32" y="108" fill="#9CA3AF" font-family="ui-monospace, monospace" font-size="10">Focus: Zero-Dependency Tools</text>
+  <text x="22" y="136" fill="#22C55E" font-family="ui-monospace, monospace" font-size="11">$ ls ./featured-projects</text>
+  <rect x="22" y="146" width="170" height="6" rx="3" fill="#4B5563"/>
+  <rect x="22" y="158" width="140" height="6" rx="3" fill="#374151"/>
+</svg>

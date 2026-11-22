@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="140" viewBox="0 0 320 140" fill="none">
+  <rect width="320" height="140" rx="10" fill="#FFF1F2" stroke="#FBCFE8" stroke-width="2"/>
+  <rect x="85" y="50" width="150" height="40" rx="6" fill="#EA4AAA"/>
+  <text x="160" y="75" text-anchor="middle" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="14" font-weight="700">♥ SPONSOR</text>
+</svg>

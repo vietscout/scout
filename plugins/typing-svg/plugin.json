@@ -1,0 +1,9 @@
+{
+  "id": "typing-svg",
+  "name": "Typing SVG Banner",
+  "description": "Adds an animated typing header powered by readme-typing-svg.",
+  "author": "cmduyeen",
+  "defaults": {
+    "TYPING_LINES": "Builder+%26+Open-Source+Creator;Automation+%26+Clean+Code"
+  }
+}

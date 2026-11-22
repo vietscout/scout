@@ -1,0 +1,10 @@
+{
+  "id": "catppuccin",
+  "name": "Catppuccin Mocha",
+  "description": "Soothing pastel-dark palette inspired by Catppuccin (catppuccin/catppuccin).",
+  "author": "cmduyeen",
+  "defaults": {
+    "STATS_THEME": "catppuccin_mocha",
+    "GRAPH_THEME": "catppuccin"
+  }
+}

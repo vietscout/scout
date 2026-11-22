@@ -1,0 +1,9 @@
+{
+  "id": "activity-graph",
+  "name": "Contribution Activity Graph",
+  "description": "Renders a 31-day contribution line graph using github-readme-activity-graph.",
+  "author": "cmduyeen",
+  "defaults": {
+    "GRAPH_THEME": "minimal"
+  }
+}

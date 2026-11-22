@@ -1,0 +1,10 @@
+{
+  "id": "dracula",
+  "name": "Dracula Palette",
+  "description": "Dark purple & neon palette inspired by Dracula Theme (dracula/dracula-theme).",
+  "author": "cmduyeen",
+  "defaults": {
+    "STATS_THEME": "dracula",
+    "GRAPH_THEME": "dracula"
+  }
+}

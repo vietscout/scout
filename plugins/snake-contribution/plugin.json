@@ -1,0 +1,8 @@
+{
+  "id": "snake-contribution",
+  "name": "Contribution Snake Animation",
+  "category": "Automation",
+  "description": "Generates an animated SVG snake eating your contribution graph daily via Platane/snk.",
+  "author": "cmduyeen",
+  "workflow_file": "snake-contribution.yml"
+}

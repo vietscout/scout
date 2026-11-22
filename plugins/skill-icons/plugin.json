@@ -1,0 +1,9 @@
+{
+  "id": "skill-icons",
+  "name": "Skill Icons Grid",
+  "description": "Displays your tech stack cleanly using skillicons.dev.",
+  "author": "cmduyeen",
+  "defaults": {
+    "SKILLS": "py,ts,js,git,github,vscode,obsidian,markdown"
+  }
+}

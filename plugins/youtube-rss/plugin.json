@@ -1,0 +1,10 @@
+{
+  "id": "youtube-rss",
+  "name": "YouTube RSS Sync",
+  "description": "Automatically lists your latest YouTube videos via channel RSS feed.",
+  "author": "cmduyeen",
+  "workflow_file": "youtube-rss-sync.yml",
+  "defaults": {
+    "YOUTUBE_CHANNEL_ID": "UC_YOUR_CHANNEL_ID"
+  }
+}

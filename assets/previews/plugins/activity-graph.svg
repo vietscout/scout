@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="140" viewBox="0 0 320 140" fill="none">
+  <rect width="320" height="140" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <text x="20" y="28" fill="#E2E8F0" font-family="system-ui, sans-serif" font-size="11" font-weight="600">Contribution Activity Graph</text>
+  <polyline points="22,106 58,92 94,98 130,68 166,76 202,48 238,60 274,36 298,44" stroke="#38BDF8" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="130" cy="68" r="4" fill="#38BDF8"/>
+  <circle cx="202" cy="48" r="4" fill="#38BDF8"/>
+  <circle cx="274" cy="36" r="4" fill="#38BDF8"/>
+</svg>

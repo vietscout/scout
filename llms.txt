@@ -1,0 +1,13 @@
+# Pro GitHub Starter Kit
+
+> Open-source, Obsidian-inspired GitHub Profile starter kit featuring 9 modular themes, 12 plug-and-play plugins (Blog RSS, YouTube RSS, Spotify, WakaTime, Contribution Snake), a zero-setup Web Builder, curated avatar & icon tools, a policy-safe GitHub Achievement Badges guide, and an SEO/GEO checklist.
+
+- [Live Web Builder](https://cmduyeen.github.io/pro-github-starter-kit/)
+- [Main Guide](README.md)
+- [Curated Tools & Avatar Generators](docs/RESOURCES.md)
+- [Profile Automation Guide](docs/AUTOMATION.md)
+- [GitHub Achievement Badges Catalog](docs/BADGES.md)
+- [GitHub SEO & GEO Checklist](docs/SEO-CHECKLIST.md)
+- [Contributing Themes & Plugins](CONTRIBUTING.md)
+
+Use `python setup.py` for the interactive terminal wizard, or `python setup.py --list` to inspect all 9 themes and 12 plugins.

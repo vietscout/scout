@@ -1,0 +1,9 @@
+{
+  "id": "github-stats",
+  "name": "GitHub Stats & Streak Cards",
+  "description": "Embeds dynamic GitHub summary stats, top languages, and streak cards.",
+  "author": "cmduyeen",
+  "defaults": {
+    "STATS_THEME": "transparent"
+  }
+}
